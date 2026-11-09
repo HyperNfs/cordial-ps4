@@ -1,3 +1,6 @@
+> **PS4 fork: experimental diagnostics only; Roblox does not run on PS4.** [PS4 status, tested versions and blockers](docs/PS4-STATUS.md).
+> The demos, feature list and install instructions below describe **upstream Linux Cordial**, not this PS4 port.
+
 <p align="center">
   <img src="https://raw.githubusercontent.com/luohoa97/cordial/main/packaging/banner.svg" alt="Cordial" width="460">
 </p>
@@ -21,7 +24,7 @@ container or virtual machine, on x86-64 or aarch64. GPL-3.0-or-later.
 Documentation: **[cordial.mintlify.app](https://cordial.mintlify.app)**, built
 from [`docs/`](docs/README.md).
 
-## Demo
+## Demo (upstream Linux)
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/luohoa97/cordial/main/docs/media/cordial-doors.gif"
@@ -50,7 +53,7 @@ I used Sober for a year, and it worked really well. Cordial started off as a wee
 
 Credit to sober for making android Roblox runtimes possible
 
-## Status
+## Status (upstream Linux)
 
 Experimental. Full table in [`docs/status.md`](docs/status.md).
 
@@ -100,7 +103,7 @@ binary ([`docs/adr/ADR-001-in-process-hooking.md`](docs/adr/ADR-001-in-process-h
 
 Diagram and data flow: [`docs/architecture.md`](docs/architecture.md).
 
-## Install
+## Install (upstream Linux)
 
 x86-64 or aarch64 Linux. Wayland is the primary backend and X11 is supported
 ([`docs/adr/ADR-024-x11-is-supported-again.md`](docs/adr/ADR-024-x11-is-supported-again.md)).

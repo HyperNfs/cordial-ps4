@@ -4,11 +4,13 @@ The user and plugin-developer pages here are also published, with search, at
 [cordial.mintlify.app](https://cordial.mintlify.app). This index covers the
 whole folder, including the working notes the site leaves out.
 
-Start with [`NEXT.md`](NEXT.md). The rest here is reference, in roughly the
-order a newcomer would want it.
+For this fork's experimental PS4 work, start with [PS4 status](PS4-STATUS.md).
+The remaining pages describe upstream Linux Cordial; for that platform start
+with [`NEXT.md`](NEXT.md). The rest is reference.
 
 | | |
 |---|---|
+| [`PS4-STATUS.md`](PS4-STATUS.md) | PS4 probe results, what is not implemented, release verification and next gates; not a working Roblox client |
 | [`NEXT.md`](NEXT.md) | Where to start, what is blocking, and what has already been ruled out |
 | [`status.md`](status.md) | The current feature table, what changed recently, and three of the harder bugs it took to get here |
 | [`install.md`](install.md) | Full install detail: every package format, signing and repository trust, building from source |
