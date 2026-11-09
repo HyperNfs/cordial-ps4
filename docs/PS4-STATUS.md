@@ -161,16 +161,94 @@ licenses are unchanged by this documentation-only fork update.
 - This GitHub update is documentation/evidence only. The upstream Linux runtime and
   its cargo tests were **not built or run** for publication from Termux.
 
-## Next gates — work is paused, not promised for the next build
+## Next steps
 
-1. Resolve source/license provenance before making the historical binary public.
-2. If runtime work resumes, obtain the precise Stage 25 operation/result/errno on
-   console, fix that demonstrated cause once, then retest the full accumulated gate.
-3. Complete real providers needed for actual-client deferred mapping, dependency
-   binding and relocation. Do not count empty libraries or unresolved symbols as success.
-4. Only after that, attempt controlled constructors and JNI with measured evidence.
-5. Implement graphics/services/input/audio/assets/network until a real launcher,
-   login and playable experience are observed. None is currently demonstrated on PS4.
+**Planned work, not completed work or a next-build launch promise. Runtime/build
+work remains paused until the owner explicitly asks to resume it.** The list below
+is an ordered handoff for whoever continues; adding it does not authorize a build,
+console upload or public release.
 
-No estimated next-build Roblox launch, anti-cheat/integrity bypass, client patching
-or redistribution of Roblox material is part of this status report.
+### 1. Make the PS4 work available and reproducible
+
+- [ ] Import the standalone PS4 loader/compatibility sources, owned test fixtures,
+  build scripts and required notices into a clearly separated part of this fork.
+  Exclude Roblox binaries/assets, credentials, private logs and SDK binaries whose
+  redistribution terms have not been established.
+- [ ] Document toolchain versions, required externally supplied components and
+  exact build/test/package commands. Label the imported source version honestly:
+  current 01.16 sources must not be presented as an exact 01.14 snapshot.
+- **Done when:** a clean checkout plus documented, lawfully obtained prerequisites
+  can build the identified source version and run its native/package checks. An
+  exact historical 01.14 source claim requires an independently verified snapshot.
+
+### 2. Resolve the draft-release publication gate
+
+- [ ] Establish redistribution provenance for bundled `libc.prx`/`libSceFios2.prx`
+  and satisfy applicable component notice/source obligations. Partial notices alone
+  are not clearance. If the bundle cannot be cleared, keep it private rather than
+  silently replacing the historical asset or claiming it is reproducible.
+- **Done when:** the owner can review a verified component/provenance record and
+  applicable source/notices before deciding whether to publish. Preserve the exact
+  01.14 package/checksum and identify any later rebuilt package as a different artifact.
+
+### 3. Identify and fix the demonstrated Stage 25 failure
+
+- [ ] If runtime work is authorized again, rerun the missing native-loader UBSan
+  check for the local diagnostic revision, then verify its package before any
+  console delivery. Do not accidentally send the historical 01.14 instead.
+- [ ] Capture both probe and kernel logs from the diagnostic build. Record the
+  exact stdio operation, native result and errno **before cleanup**; do not guess
+  that stat, fcntl, fdopen or another candidate is the culprit.
+- [ ] Fix the demonstrated shared-provider cause and keep a small regression
+  test, including failure copyout/FD ownership where applicable.
+- **Done when:** the full console run passes stages 1–25, including all three
+  Stage 25 load/init/unload cycles, with preserved logs and package hashes. A native
+  injected-failure control alone is not Sony hardware confirmation.
+
+### 4. Complete the file/VM gate and investigate the exit error
+
+- [ ] Reach Stage 26 and validate known-file stat/fstat fields, descriptor flags,
+  shared file mapping/msync/readback, stdio and owned-file cleanup on Sony hardware.
+  Preserve an existing reserved file; never delete or overwrite it to force a pass.
+- [ ] Calibrate the raw Sony metadata fields still in doubt and investigate
+  `Exit spawn failed : 0x80aa001a ELF path=exit` separately from guest-test success.
+- **Done when:** both logs show all 26 stages and the final integrated pass;
+  any remaining metadata/exit limitation stays explicitly documented. Claim a
+  clean exit only after a separate capture confirms that error is resolved.
+
+### 5. Reach actual-client mapping and relocation, without constructors
+
+- [ ] Work down the current **339 unresolved strong imports, seven absent
+  libraries and 16 unresolved data objects** with real, ABI-reviewed providers.
+  Recompute the inventory for the exact client revision being tested.
+- [ ] Preserve checked APS2 decoding, rollback, handle/refcount lifetime and error
+  paths. Review execution hazards such as IFUNC before treating a load as deferred.
+  Do not use empty libraries, ABI-incompatible forwarding or skipped relocations.
+- **Done when:** the actual client and required dependencies are mapped and bound,
+  relocations are applied successfully, and evidence distinguishes that result
+  from the existing metadata-only readelf comparison. No constructors/JNI claim yet.
+
+### 6. Attempt controlled initialization and JNI
+
+- [ ] Establish required Android service/JNI contracts and initialization order,
+  then explicitly run constructors and native initialization with useful diagnostics.
+  Preserve lifecycle, per-DSO finalization and repeated-init safeguards.
+- **Done when:** actual-client constructor/JNI milestones are observed and logged
+  without unresolved dependencies or fabricated success returns. This is still not
+  evidence of a rendered or playable client.
+
+### 7. Bring up the user-visible runtime, then test a real experience
+
+- [ ] Implement and validate the required graphics/surface, Android services,
+  input, audio/media, assets/filesystem and networking paths in dependency order.
+- [ ] Record separate milestones for first rendered frame, usable login, joining
+  an experience, interactive input/audio and stable repeated startup/shutdown.
+- **Done when:** an unmodified official client demonstrably reaches those stages
+  on PS4. Publish logs/results with private account/network data removed, retaining
+  exact package/client identifiers and known limitations. Do not inherit Linux results.
+
+For each resumed runtime batch, retain native/error/ABI tests, applicable sanitizer
+checks, cross-link/package checks and console evidence. Keep every local package;
+transfer success is not execution proof. No dates or next-build Roblox launch are
+promised. Anti-cheat/integrity bypass, client patching and redistribution of Roblox
+material are not part of this plan.

@@ -1,4 +1,4 @@
-> **PS4 fork: experimental diagnostics only; Roblox does not run on PS4.** [PS4 status, tested versions and blockers](docs/PS4-STATUS.md).
+> **PS4 fork: experimental diagnostics only; Roblox does not run on PS4.** [PS4 status, tested versions and blockers](docs/PS4-STATUS.md) · [Next steps](docs/PS4-STATUS.md#next-steps).
 > The demos, feature list and install instructions below describe **upstream Linux Cordial**, not this PS4 port.
 
 <p align="center">
