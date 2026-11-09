@@ -128,6 +128,23 @@ capture hashes, version-specific results and test limits. Raw console logs,
 private addresses, account data and credentials are deliberately not published.
 The hash summary does not substitute for independently reproducing the run.
 
+### Beta release uploads
+
+Both historical builds are uploaded as **draft beta prereleases**:
+
+- [01.14 beta](https://github.com/HyperNfs/cordial-ps4/releases/tag/untagged-4efb0e0fda80940732ca):
+  last complete 24-stage console pass, not Roblox.
+- [01.15 beta](https://github.com/HyperNfs/cordial-ps4/releases/tag/untagged-36ebe6044539d4e86918):
+  **known Stage 25 failure**, stages 1–24 passed; Stage 26 not reached. Filename
+  `cordial-probe-v01.15-20261109-143020.pkg`, **6,619,136 bytes**, SHA-256
+  `854d8598fdd61e37cea03c6d0b1eb6ae84689452284ccad89401771f91302253`.
+
+Each has its own unchanged package/checksum and sanitized artifact evidence, plus
+partial notices. Repository write access is required to view draft assets. Neither
+is publicly published: bundled-module redistribution and historical source/notices
+verification remain unresolved for both. Beta labeling does not resolve those gates.
+No build, console upload or runtime development was resumed to create these releases.
+
 ## Source and build availability
 
 **This repository still contains upstream Linux Cordial source, not the standalone

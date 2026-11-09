@@ -32,12 +32,16 @@ network integration remain. Stdio/file calibration and an exit-path error are un
 See the [measured PS4 status and evidence](docs/PS4-STATUS.md) for exact version
 coverage, test limits and known failures. Upstream Linux demos/results do not apply.
 
-## 01.14 package
+## Beta packages
 
-The historical [01.14 draft release](https://github.com/HyperNfs/cordial-ps4/releases/tag/untagged-d9235e3f91e7d4d41421)
-contains the unchanged diagnostic `.pkg`, checksum, sanitized evidence and partial
-notices. **Sign in with repository write access to view it; it is not public.**
-All four assets were downloaded back and verified by size and SHA-256.
+| Draft beta | PS4 result |
+|---|---|
+| [**01.14 beta**](https://github.com/HyperNfs/cordial-ps4/releases/tag/untagged-4efb0e0fda80940732ca) | Last fully passing probe: all 24 stages. Not Roblox. |
+| [**01.15 beta**](https://github.com/HyperNfs/cordial-ps4/releases/tag/untagged-36ebe6044539d4e86918) | **Known Stage 25 failure**; not an overall pass or a confirmed fix. |
+
+Each contains the unchanged historical `.pkg`, checksum, sanitized evidence and
+partial notices. **Sign in with repository write access; these are not public.**
+Release assets are downloaded back and verified by size and SHA-256.
 
 Publication is pending bundled SDK-module redistribution and exact historical
 source/notices verification. This is not a Roblox installer. No Roblox binary or
